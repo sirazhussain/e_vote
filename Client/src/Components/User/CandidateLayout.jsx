@@ -21,15 +21,15 @@ const CandidateLayout = (props) => {
 
   const handleClick = async (id) => {
     setLoading(true);
-    // setMsg(" Accessing Camera");
-    // let res = await axios.post(serverLink + "op");
-    // let user = res.data;
+    setMsg(" Accessing Camera");
+    let res = await axios.post(serverLink + "op");
+    let user = res.data;
 
-    // setMsg(user + " Detected");
+    setMsg(user + " Detected");
     
-    let res = await axios.get(serverLink + "user/username/" + "siraz");
-    console.log(serverLink + "user/username/" + "siraz");
-    let user = res.data[0];
+    res = await axios.get(serverLink + "user/username/" + user);
+    console.log(serverLink + "user/username/" + user);
+    user = res.data[0];
 
     console.log(user);
     const tmp = {
